@@ -6,16 +6,12 @@ import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 
 const App = () => {
-  const generateContactList = (contact) => {
-    if (!contact) {
+  const generateContactList = () => {
       const contacts = localStorage.getItem("contacts");
       if (contacts) {
         return JSON.parse(contacts);
       }
       return contactsFaked;
-    } else {
-      contacts.push(contact);
-    }
   };
 
   const [contacts, setContacts] = useState(generateContactList);
